@@ -8,47 +8,29 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #f4f6f9;
-      --surface: #ffffff;
-      --border: #e1e5eb;
-      --accent: #0070d2;
-      --accent-light: #e8f4fd;
-      --text: #16325c;
-      --text-dim: #706e6b;
-      --success: #04844b;
-      --success-bg: #e3f5ed;
-      --warning: #ff9e2c;
-      --danger: #c23934;
-      --purple: #7b5ea7;
-      --purple-bg: #f2eefb;
+      --bg: #f4f6f9; --surface: #ffffff; --border: #e1e5eb;
+      --accent: #0070d2; --accent-light: #e8f4fd; --text: #16325c;
+      --text-dim: #706e6b; --success: #04844b; --success-bg: #e3f5ed;
+      --warning: #ff9e2c; --danger: #c23934; --purple: #7b5ea7;
       --sidebar-w: 220px;
     }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; overflow: hidden; font-size: 13px; }
- 
-    /* ── DISCLAIMER ── */
-    #disclaimer {
-      position: fixed; inset: 0; background: #0f1f3d;
-      display: flex; align-items: center; justify-content: center; z-index: 999;
-    }
+
+    /* DISCLAIMER */
+    #disclaimer { position: fixed; inset: 0; background: #0f1f3d; display: flex; align-items: center; justify-content: center; z-index: 999; }
     #disclaimer.hidden { display: none; }
-    .disc-card {
-      background: #fff; border-radius: 16px; padding: 44px 48px;
-      max-width: 500px; width: 90%; text-align: center;
-      animation: riseIn 0.4s ease;
-    }
+    .disc-card { background: #fff; border-radius: 16px; padding: 44px 48px; max-width: 500px; width: 90%; text-align: center; animation: riseIn 0.4s ease; }
     @keyframes riseIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
     .disc-logo { width: 52px; height: 52px; background: #0070d2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: #fff; margin: 0 auto 20px; }
     .disc-card h1 { font-size: 20px; font-weight: 700; color: #16325c; margin-bottom: 10px; }
     .disc-badge { display: inline-block; background: #fff3cd; color: #856404; border: 1px solid #ffc107; border-radius: 20px; padding: 4px 14px; font-size: 12px; font-weight: 600; margin-bottom: 18px; }
     .disc-card p { font-size: 13.5px; color: #706e6b; line-height: 1.75; margin-bottom: 28px; }
     .disc-card p strong { color: #16325c; }
-    .disc-features { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
-    .disc-feature { background: #f4f6f9; border: 1px solid #e1e5eb; border-radius: 8px; padding: 8px 14px; font-size: 12px; color: #16325c; }
-    .disc-btn { background: #0070d2; color: #fff; border: none; border-radius: 8px; padding: 13px 36px; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; width: 100%; transition: background 0.15s; }
+    .disc-btn { background: #0070d2; color: #fff; border: none; border-radius: 8px; padding: 13px 36px; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; width: 100%; }
     .disc-btn:hover { background: #005fb2; }
     .disc-note { margin-top: 14px; font-size: 11.5px; color: #aaa; }
- 
-    /* ── SIDEBAR ── */
+
+    /* SIDEBAR */
     #sidebar { width: var(--sidebar-w); background: #16325c; display: flex; flex-direction: column; flex-shrink: 0; overflow-y: auto; }
     .sidebar-logo { padding: 18px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; }
     .sidebar-logo .logo-mark { width: 32px; height: 32px; background: #0070d2; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0; }
@@ -64,12 +46,10 @@
     .user-avatar { width: 30px; height: 30px; border-radius: 50%; background: #0070d2; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #fff; flex-shrink: 0; }
     .user-info span { display: block; font-size: 12px; font-weight: 500; color: #fff; }
     .user-info small { font-size: 10px; color: rgba(255,255,255,0.5); }
- 
-    /* ── MAIN ── */
-    #app-row { display: flex; flex: 1; overflow: hidden; }
+
+    /* MAIN */
     #main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
     #topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; height: 52px; display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
-    #topbar h1 { font-size: 16px; font-weight: 600; color: var(--text); }
     .breadcrumb { font-size: 12px; color: var(--text-dim); }
     .breadcrumb span { color: var(--accent); }
     .topbar-actions { margin-left: auto; display: flex; gap: 8px; align-items: center; }
@@ -78,12 +58,11 @@
     .btn-primary:hover { background: #005fb2; }
     .btn-ghost { background: none; border: 1px solid var(--border); color: var(--text-dim); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
- 
     #content { flex: 1; overflow-y: auto; padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
     .page { display: none; flex-direction: column; gap: 20px; }
     .page.active { display: flex; }
- 
-    /* ── METRICS ── */
+
+    /* METRICS */
     .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; position: relative; overflow: hidden; }
     .metric-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
@@ -94,16 +73,15 @@
     .metric-label { font-size: 11px; font-weight: 500; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
     .metric-value { font-size: 24px; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 6px; font-family: 'JetBrains Mono', monospace; }
     .metric-change { font-size: 11px; }
-    .up { color: var(--success); }
-    .down { color: var(--danger); }
- 
-    /* ── CARD ── */
+    .up { color: var(--success); } .down { color: var(--danger); }
+
+    /* CARD */
     .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
     .card-header { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
     .card-header h2 { font-size: 13.5px; font-weight: 600; color: var(--text); }
     .card-header .count { background: var(--accent-light); color: var(--accent); font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
- 
-    /* ── TABLE ── */
+
+    /* TABLE */
     table { width: 100%; border-collapse: collapse; }
     thead th { padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim); border-bottom: 1px solid var(--border); background: #fafbfc; }
     tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; cursor: pointer; }
@@ -112,29 +90,25 @@
     tbody td { padding: 11px 14px; font-size: 12.5px; color: var(--text); }
     .deal-name { font-weight: 500; color: var(--accent); }
     .value-cell { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
- 
     .badge { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 12px; font-size: 11px; font-weight: 500; }
-    .badge-blue   { background: #e8f4fd; color: #0070d2; }
+    .badge-blue { background: #e8f4fd; color: #0070d2; }
     .badge-orange { background: #fef3e2; color: #b06000; }
     .badge-purple { background: #f2eefb; color: #7b5ea7; }
-    .badge-green  { background: #e3f5ed; color: #04844b; }
-    .badge-gray   { background: #f4f4f4; color: #706e6b; }
-    .badge-red    { background: #fce9e9; color: #c23934; }
- 
-    /* ── TWO COL ── */
+    .badge-green { background: #e3f5ed; color: #04844b; }
+    .badge-gray { background: #f4f4f4; color: #706e6b; }
+
+    /* TWO COL */
     .two-col { display: grid; grid-template-columns: 1fr 360px; gap: 16px; }
- 
-    /* ── PIPELINE BAR ── */
+
+    /* PIPELINE BAR */
     .pipeline-bar { padding: 14px 18px; border-bottom: 1px solid var(--border); }
     .pipeline-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); margin-bottom: 6px; }
     .pipeline-track { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; display: flex; }
     .pipeline-segment { height: 100%; }
-    .seg-prospect { background: #0070d2; }
-    .seg-negotiate { background: #ff9e2c; }
-    .seg-pending { background: #7b5ea7; }
-    .seg-closed { background: #04844b; }
- 
-    /* ── CONTACTS ── */
+    .seg-prospect { background: #0070d2; } .seg-negotiate { background: #ff9e2c; }
+    .seg-pending { background: #7b5ea7; } .seg-closed { background: #04844b; }
+
+    /* CONTACTS */
     .contact-item { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; }
     .contact-item:last-child { border-bottom: none; }
     .contact-item:hover { background: #f8faff; }
@@ -143,29 +117,29 @@
     .contact-info .role { font-size: 11px; color: var(--text-dim); margin-top: 1px; }
     .contact-meta { margin-left: auto; text-align: right; font-size: 11px; color: var(--text-dim); }
     .contact-meta strong { display: block; font-size: 13px; color: var(--text); font-family: 'JetBrains Mono', monospace; }
- 
-    /* ── ACTIVITY ── */
+
+    /* ACTIVITY */
     .activity-item { display: flex; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--border); }
     .activity-item:last-child { border-bottom: none; }
     .activity-icon { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .activity-icon svg { width: 14px; height: 14px; fill: currentColor; }
     .activity-body { flex: 1; }
-    .activity-body .act-title { font-size: 12.5px; font-weight: 500; color: var(--text); }
+    .activity-body .act-title { font-size: 12.5px; font-weight: 500; }
     .activity-body .act-sub { font-size: 11.5px; color: var(--text-dim); margin-top: 2px; }
     .activity-time { font-size: 11px; color: var(--text-dim); flex-shrink: 0; margin-top: 2px; }
- 
-    /* ── MODAL ── */
+
+    /* MODAL */
     #modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 100; display: none; align-items: center; justify-content: center; }
     #modal-overlay.open { display: flex; }
     #modal { background: #fff; border-radius: 10px; padding: 28px; max-width: 420px; width: 90%; animation: riseIn 0.2s ease; }
-    #modal h3 { font-size: 15px; font-weight: 600; margin-bottom: 16px; color: var(--text); }
+    #modal h3 { font-size: 15px; font-weight: 600; margin-bottom: 16px; }
     .form-group { margin-bottom: 14px; }
     .form-group label { display: block; font-size: 11.5px; font-weight: 500; color: var(--text-dim); margin-bottom: 5px; }
     .form-group input, .form-group select { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; font-family: 'Inter', sans-serif; color: var(--text); outline: none; }
     .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
     .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
- 
-    /* ── AI PANEL ── */
+
+    /* AI PANEL */
     #ai-panel { position: fixed; right: 0; top: 0; bottom: 0; width: 360px; background: var(--surface); border-left: 1px solid var(--border); display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s ease; z-index: 50; box-shadow: -4px 0 20px rgba(0,0,0,0.08); }
     #ai-panel.open { transform: translateX(0); }
     .ai-header { padding: 16px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
@@ -173,6 +147,19 @@
     .ai-header h3 { font-size: 14px; font-weight: 600; flex: 1; }
     .ai-close { background: none; border: none; cursor: pointer; color: var(--text-dim); font-size: 18px; line-height: 1; padding: 2px 6px; border-radius: 4px; }
     .ai-close:hover { background: var(--bg); }
+
+    /* KEY INPUT SECTION */
+    #ai-key-section { padding: 18px; border-bottom: 1px solid var(--border); }
+    #ai-key-section p { font-size: 12px; color: var(--text-dim); line-height: 1.6; margin-bottom: 10px; }
+    #ai-key-section a { color: var(--accent); }
+    #ai-key-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 7px 10px; font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--text); outline: none; margin-bottom: 8px; display: block; }
+    #ai-key-input:focus { border-color: var(--accent); }
+    #ai-key-save { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 8px; font-size: 13px; font-family: 'Inter', sans-serif; font-weight: 500; cursor: pointer; margin-bottom: 12px; }
+    #ai-key-save:hover { background: #005fb2; }
+    .key-how-to { font-size: 11.5px; color: var(--text-dim); line-height: 1.7; }
+    .key-how-to strong { color: var(--text); }
+    .key-how-to code { background: var(--bg); padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
     #ai-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .ai-msg { display: flex; gap: 8px; }
     .ai-msg.user { flex-direction: row-reverse; }
@@ -199,74 +186,33 @@
     #ai-toggle { position: fixed; bottom: 24px; right: 24px; background: var(--accent); color: #fff; border: none; border-radius: 50px; padding: 10px 18px; font-size: 13px; font-weight: 500; font-family: 'Inter', sans-serif; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,112,210,0.4); transition: all 0.2s; z-index: 40; }
     #ai-toggle:hover { background: #005fb2; transform: translateY(-1px); }
     #ai-toggle svg { width: 16px; height: 16px; fill: #fff; }
- 
-    @keyframes fadeIn { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
-    .animate-in { animation: fadeIn 0.2s ease; }
- 
-    /* ── REPORT CHARTS ── */
+
+    /* CHART */
     .chart-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 12px; }
     .chart-bar-label { width: 120px; color: var(--text-dim); flex-shrink: 0; }
     .chart-bar-track { flex: 1; background: var(--border); border-radius: 3px; height: 8px; overflow: hidden; }
     .chart-bar-fill { height: 100%; border-radius: 3px; }
     .chart-bar-val { width: 60px; text-align: right; font-family: 'JetBrains Mono', monospace; color: var(--text); flex-shrink: 0; }
- 
-    /* API BANNER */
-    #api-banner {
-      background: rgba(0,112,210,0.06);
-      border-bottom: 1px solid var(--border);
-      padding: 8px 24px;
-      display: flex; align-items: center; gap: 10px;
-      font-size: 12.5px; color: var(--accent);
-      flex-shrink: 0;
-    }
-    #api-banner input {
-      flex: 1; max-width: 300px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 5px; padding: 5px 10px;
-      font-size: 12px; font-family: 'JetBrains Mono', monospace;
-      color: var(--text); outline: none;
-    }
-    #api-banner input:focus { border-color: var(--accent); }
-    #api-banner .save-btn {
-      background: var(--accent); color: #fff;
-      border: none; border-radius: 5px;
-      padding: 5px 12px; font-size: 12px;
-      font-family: 'Inter', sans-serif; font-weight: 500; cursor: pointer;
-    }
-    #how-to-btn {
-      margin-left: auto; background: none;
-      border: 1px solid var(--border); border-radius: 5px;
-      padding: 4px 10px; font-size: 12px;
-      color: var(--text-dim); cursor: pointer;
-      font-family: 'Inter', sans-serif;
-    }
-    #how-to-btn:hover { border-color: var(--accent); color: var(--accent); }
-    #how-to {
-      display: none; background: #f8faff;
-      border-bottom: 1px solid var(--border);
-      padding: 14px 24px; font-size: 12.5px;
-      color: var(--text-dim); line-height: 1.9;
-    }
+
+    @keyframes fadeIn { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+    .animate-in { animation: fadeIn 0.2s ease; }
   </style>
 </head>
 <body>
- 
+
 <!-- DISCLAIMER -->
 <div id="disclaimer">
   <div class="disc-card">
     <div class="disc-logo">AX</div>
     <div class="disc-badge">⚠ Demo Project</div>
     <h1>Apex CRM Dashboard</h1>
-    <p>This is a <strong>student portfolio project</strong> built to demonstrate CRM design, data visualization, and AI integration skills. All data shown is <strong>completely fictional</strong> — no real clients, deals, or brokers are represented.</p>
- 
+    <p>This is a <strong>student portfolio project</strong> built to demonstrate CRM design, data visualization, and AI integration skills. All data shown is <strong>completely fictional</strong>.</p>
     <button class="disc-btn" onclick="enterApp()">Enter Demo →</button>
     <div class="disc-note">Built by Jacob Matti · Arizona State University</div>
   </div>
 </div>
- 
+
 <!-- SIDEBAR -->
-<div id="app-row">
 <div id="sidebar">
   <div class="sidebar-logo">
     <div class="logo-mark">AX</div>
@@ -300,6 +246,8 @@
     <div class="user-avatar">JM</div>
     <div class="user-info"><span>Jacob Matti</span><small>Senior Broker</small></div>
   </div>
+</div>
+
 <!-- MAIN -->
 <div id="main">
   <div id="topbar">
@@ -309,10 +257,10 @@
       <button class="btn btn-primary" id="topbar-primary" onclick="topbarPrimary()">+ New Deal</button>
     </div>
   </div>
- 
+
   <div id="content">
- 
-    <!-- DASHBOARD PAGE -->
+
+    <!-- DASHBOARD -->
     <div class="page active" id="page-dashboard">
       <div class="metrics-grid animate-in">
         <div class="metric-card blue"><div class="metric-label">Total Pipeline</div><div class="metric-value">$24.6M</div><div class="metric-change up">↑ 12% vs last quarter</div></div>
@@ -346,11 +294,11 @@
         </div>
       </div>
     </div>
- 
-    <!-- CONTACTS PAGE -->
+
+    <!-- CONTACTS -->
     <div class="page" id="page-contacts">
       <div class="card animate-in">
-        <div class="card-header"><h2>All Broker Contacts</h2><span class="count">4 brokers</span></div>
+        <div class="card-header"><h2>All Broker Contacts</h2><span class="count">6 brokers</span></div>
         <table><thead><tr><th>Name</th><th>Role</th><th>Location</th><th>Email</th><th>Phone</th><th>Active Deals</th><th>Pipeline</th></tr></thead><tbody>
           <tr><td><span class="deal-name">Jacob Matti</span></td><td>Senior Broker</td><td>Phoenix, AZ</td><td>j.matti@apexre.com</td><td>(480) 364-3214</td><td>2</td><td class="value-cell">$1,780,000</td></tr>
           <tr><td><span class="deal-name">Sofia Rivera</span></td><td>Senior Broker</td><td>Scottsdale, AZ</td><td>s.rivera@apexre.com</td><td>(602) 555-0182</td><td>2</td><td class="value-cell">$4,120,000</td></tr>
@@ -361,8 +309,8 @@
         </tbody></table>
       </div>
     </div>
- 
-    <!-- DEALS PAGE -->
+
+    <!-- DEALS -->
     <div class="page" id="page-deals">
       <div class="card animate-in">
         <div class="card-header"><h2>All Deals</h2><span class="count">12 deals</span></div>
@@ -382,8 +330,8 @@
         </tbody></table>
       </div>
     </div>
- 
-    <!-- ACTIVITY PAGE -->
+
+    <!-- ACTIVITY -->
     <div class="page" id="page-activity">
       <div class="card animate-in">
         <div class="card-header"><h2>Recent Activity</h2><span class="count">Today</span></div>
@@ -391,39 +339,31 @@
           <div class="activity-item"><div class="activity-icon" style="background:#e3f5ed;color:#04844b;"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div><div class="activity-body"><div class="act-title">Mesa Industrial Unit 4 — marked Closed</div><div class="act-sub">Sofia Rivera · $920,000 deal finalized</div></div><div class="activity-time">9:14 AM</div></div>
           <div class="activity-item"><div class="activity-icon" style="background:#e8f4fd;color:#0070d2;"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div><div class="activity-body"><div class="act-title">New deal logged: Peoria Office Suite</div><div class="act-sub">Derek Okafor · $310,000 · Prospect stage</div></div><div class="activity-time">8:52 AM</div></div>
           <div class="activity-item"><div class="activity-icon" style="background:#fef3e2;color:#b06000;"><svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></div><div class="activity-body"><div class="act-title">Scottsdale Office Park — stage updated</div><div class="act-sub">Marcus Chen · moved to Pending Close</div></div><div class="activity-time">8:30 AM</div></div>
-          <div class="activity-item"><div class="activity-icon" style="background:#f2eefb;color:#7b5ea7;"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div class="activity-body"><div class="act-title">Client email logged — AZ Freight Co.</div><div class="act-sub">Jacob Matti · re: Desert Logistics Hub tour</div></div><div class="activity-time">Yesterday</div></div>
           <div class="activity-item"><div class="activity-icon" style="background:#fce9e9;color:#c23934;"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div><div class="activity-body"><div class="act-title">Glendale Warehouse — marked Dead</div><div class="act-sub">Aisha Patel · client withdrew from negotiations</div></div><div class="activity-time">Yesterday</div></div>
-          <div class="activity-item"><div class="activity-icon" style="background:#e8f4fd;color:#0070d2;"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div><div class="activity-body"><div class="act-title">New deal logged: Gilbert Distribution Ctr</div><div class="act-sub">Marcus Chen · $4,100,000 · Negotiating</div></div><div class="activity-time">May 27</div></div>
         </div>
       </div>
     </div>
- 
-    <!-- PIPELINE REPORT PAGE -->
+
+    <!-- PIPELINE REPORT -->
     <div class="page" id="page-pipeline">
       <div class="metrics-grid animate-in">
-        <div class="metric-card blue"><div class="metric-label">Prospect</div><div class="metric-value">$11.9M</div><div class="metric-change" style="color:var(--text-dim);">5 deals · 35% of pipeline</div></div>
-        <div class="metric-card orange"><div class="metric-label">Negotiating</div><div class="metric-value">$9.7M</div><div class="metric-change" style="color:var(--text-dim);">3 deals · 28% of pipeline</div></div>
-        <div class="metric-card purple"><div class="metric-label">Pending Close</div><div class="metric-value">$6.9M</div><div class="metric-change" style="color:var(--text-dim);">2 deals · 20% of pipeline</div></div>
+        <div class="metric-card blue"><div class="metric-label">Prospect</div><div class="metric-value">$11.9M</div><div class="metric-change" style="color:var(--text-dim);">5 deals · 35%</div></div>
+        <div class="metric-card orange"><div class="metric-label">Negotiating</div><div class="metric-value">$9.7M</div><div class="metric-change" style="color:var(--text-dim);">3 deals · 28%</div></div>
+        <div class="metric-card purple"><div class="metric-label">Pending Close</div><div class="metric-value">$6.9M</div><div class="metric-change" style="color:var(--text-dim);">2 deals · 20%</div></div>
         <div class="metric-card green"><div class="metric-label">Closed (MTD)</div><div class="metric-value">$1.5M</div><div class="metric-change up">↑ 2 deals this month</div></div>
       </div>
       <div class="card animate-in">
-        <div class="card-header"><h2>Pipeline by Deal Type</h2></div>
-        <div style="padding:20px 18px;">
-          <div class="chart-bar-row"><div class="chart-bar-label">Sale</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:68%;background:#0070d2;"></div></div><div class="chart-bar-val">$16.7M</div></div>
-          <div class="chart-bar-row"><div class="chart-bar-label">Lease</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:32%;background:#7b5ea7;"></div></div><div class="chart-bar-val">$7.9M</div></div>
-        </div>
-        <div class="card-header" style="border-top:1px solid var(--border);"><h2>Pipeline by Broker</h2></div>
+        <div class="card-header"><h2>Pipeline by Broker</h2></div>
         <div style="padding:20px 18px;">
           <div class="chart-bar-row"><div class="chart-bar-label">Marcus Chen</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:78%;background:#0070d2;"></div></div><div class="chart-bar-val">$6.48M</div></div>
           <div class="chart-bar-row"><div class="chart-bar-label">Sofia Rivera</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:50%;background:#04844b;"></div></div><div class="chart-bar-val">$4.12M</div></div>
           <div class="chart-bar-row"><div class="chart-bar-label">Aisha Patel</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:34%;background:#7b5ea7;"></div></div><div class="chart-bar-val">$2.83M</div></div>
           <div class="chart-bar-row"><div class="chart-bar-label">Jacob Matti</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:22%;background:#ff9e2c;"></div></div><div class="chart-bar-val">$1.78M</div></div>
-          <div class="chart-bar-row"><div class="chart-bar-label">Derek Okafor</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:7%;background:#aeaeae;"></div></div><div class="chart-bar-val">$560K</div></div>
         </div>
       </div>
     </div>
- 
-    <!-- PERFORMANCE PAGE -->
+
+    <!-- PERFORMANCE -->
     <div class="page" id="page-performance">
       <div class="metrics-grid animate-in">
         <div class="metric-card green"><div class="metric-label">Deals Closed (QTD)</div><div class="metric-value">5</div><div class="metric-change up">↑ 2 vs last quarter</div></div>
@@ -433,41 +373,40 @@
       </div>
       <div class="card animate-in">
         <div class="card-header"><h2>Broker Performance — Q2 2026</h2></div>
-        <table><thead><tr><th>Broker</th><th>Deals Closed</th><th>Revenue Generated</th><th>Active Pipeline</th><th>Win Rate</th><th>Avg Days to Close</th></tr></thead><tbody>
-          <tr><td><span class="deal-name">Marcus Chen</span></td><td>2</td><td class="value-cell">$2,100,000</td><td class="value-cell">$6,480,000</td><td><span class="badge badge-green">74%</span></td><td>38 days</td></tr>
-          <tr><td><span class="deal-name">Sofia Rivera</span></td><td>2</td><td class="value-cell">$1,840,000</td><td class="value-cell">$4,120,000</td><td><span class="badge badge-green">71%</span></td><td>44 days</td></tr>
-          <tr><td><span class="deal-name">Aisha Patel</span></td><td>1</td><td class="value-cell">$575,000</td><td class="value-cell">$2,830,000</td><td><span class="badge badge-orange">60%</span></td><td>52 days</td></tr>
-          <tr><td><span class="deal-name">Jacob Matti</span></td><td>0</td><td class="value-cell">$0</td><td class="value-cell">$1,780,000</td><td><span class="badge badge-orange">58%</span></td><td>61 days</td></tr>
-          <tr><td><span class="deal-name">Derek Okafor</span></td><td>0</td><td class="value-cell">$0</td><td class="value-cell">$560,000</td><td><span class="badge badge-gray">N/A</span></td><td>—</td></tr>
+        <table><thead><tr><th>Broker</th><th>Deals Closed</th><th>Revenue</th><th>Pipeline</th><th>Win Rate</th><th>Avg Days</th></tr></thead><tbody>
+          <tr><td><span class="deal-name">Marcus Chen</span></td><td>2</td><td class="value-cell">$2,100,000</td><td class="value-cell">$6,480,000</td><td><span class="badge badge-green">74%</span></td><td>38</td></tr>
+          <tr><td><span class="deal-name">Sofia Rivera</span></td><td>2</td><td class="value-cell">$1,840,000</td><td class="value-cell">$4,120,000</td><td><span class="badge badge-green">71%</span></td><td>44</td></tr>
+          <tr><td><span class="deal-name">Aisha Patel</span></td><td>1</td><td class="value-cell">$575,000</td><td class="value-cell">$2,830,000</td><td><span class="badge badge-orange">60%</span></td><td>52</td></tr>
+          <tr><td><span class="deal-name">Jacob Matti</span></td><td>0</td><td class="value-cell">$0</td><td class="value-cell">$1,780,000</td><td><span class="badge badge-orange">58%</span></td><td>61</td></tr>
         </tbody></table>
       </div>
     </div>
- 
+
   </div>
 </div>
-</div>
-</div>
- 
+
 <!-- AI TOGGLE -->
 <button id="ai-toggle" onclick="toggleAI()">
   <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
   Ask AI
 </button>
- 
+
 <!-- AI PANEL -->
 <div id="ai-panel">
   <div class="ai-header"><div class="ai-dot"></div><h3>Apex AI Assistant</h3><button class="ai-close" onclick="toggleAI()">×</button></div>
-  <!-- API KEY INPUT (shown until key is saved) -->
-  <div id="ai-key-section" style="padding:16px;border-bottom:1px solid var(--border);">
-    <p style="font-size:12px;color:var(--text-dim);margin-bottom:10px;line-height:1.6;">To use the AI assistant, enter your free Groq API key below.</p>
-    <input type="password" id="ai-key-input" placeholder="gsk_..." style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--text);outline:none;margin-bottom:8px;"/>
-    <button onclick="saveAIKey()" style="width:100%;background:var(--accent);color:#fff;border:none;border-radius:6px;padding:8px;font-size:13px;font-family:'Inter',sans-serif;font-weight:500;cursor:pointer;margin-bottom:10px;">Save Key</button>
-    <p style="font-size:11.5px;color:var(--text-dim);line-height:1.7;">
-      Don't have a key? Get one free at <a href="https://console.groq.com" target="_blank" style="color:var(--accent);">console.groq.com</a> — no credit card needed.<br/>
-      Create an account → API Keys → Create API Key. Copy the key (starts with <code style="background:var(--bg);font-size:11px;">gsk_</code>) and paste it above.
-    </p>
+
+  <div id="ai-key-section">
+    <p>Enter your free Groq API key to use the AI assistant.</p>
+    <input type="password" id="ai-key-input" placeholder="gsk_..."/>
+    <button id="ai-key-save" onclick="saveAIKey()">Save Key</button>
+    <div class="key-how-to">
+      Don't have a key? Get one free at <a href="https://console.groq.com" target="_blank">console.groq.com</a> — no credit card needed.<br/>
+      1. Create an account<br/>
+      2. Click <strong>API Keys</strong> → <strong>Create API Key</strong><br/>
+      3. Copy the key (starts with <code>gsk_</code>) and paste above
+    </div>
   </div>
- 
+
   <div id="ai-messages"></div>
   <div class="ai-suggestions" id="ai-suggestions">
     <div class="ai-suggestion" onclick="askAI(this)">Summarize my current pipeline</div>
@@ -480,7 +419,7 @@
     <button id="ai-send" onclick="sendAI()"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
   </div>
 </div>
- 
+
 <!-- NEW DEAL MODAL -->
 <div id="modal-overlay" onclick="closeModal(event)">
   <div id="modal">
@@ -492,56 +431,15 @@
     </div>
   </div>
 </div>
- 
+
 <script>
 let API_KEY = localStorage.getItem('apex_crm_groq_key') || '';
-const CRM_CONTEXT = `You are an AI assistant embedded in Apex Real Estate Partners' CRM. You have access to live CRM data:
- 
-DEALS: Westgate Retail Center (Negotiating, $3.2M, S.Rivera, Jun15), Scottsdale Office Park (Pending Close, $5.8M, M.Chen, Jun3), Desert Logistics Hub (Prospect, $1.75M, J.Matti, Jul20), Mesa Industrial Unit 4 (Closed, $920K, S.Rivera), Tempe Mixed-Use Block (Negotiating, $2.4M, A.Patel, Jul5), Chandler Flex Space (Prospect, $680K, M.Chen, Aug1), Phoenix Retail Strip (Pending Close, $1.1M, J.Matti, Jun10), Glendale Warehouse (Dead, $430K, A.Patel), Gilbert Distribution Ctr (Negotiating, $4.1M, M.Chen, Jul30), Downtown Phoenix Tower (Prospect, $9.2M, S.Rivera, Sep1).
- 
-BROKERS: Jacob Matti (Senior, $1.78M pipeline), Sofia Rivera (Senior, $4.12M), Marcus Chen (Associate, $6.48M), Aisha Patel (Associate, $2.83M).
- 
-METRICS: Total Pipeline $24.6M (↑12%), Closed MTD $4.2M, Active Deals 18, Close Rate 67% (↓2%).
- 
-Be concise and professional.`;
- 
 let aiOpen = false, aiLoading = false;
 let currentPage = 'dashboard';
- 
-const pageConfigs = {
-  dashboard:   { label: 'Dashboard',       primary: '+ New Deal',    secondary: 'Import' },
-  contacts:    { label: 'Contacts',         primary: '+ New Contact', secondary: 'Export' },
-  deals:       { label: 'Deals',            primary: '+ New Deal',    secondary: 'Filter' },
-  activity:    { label: 'Activity',         primary: 'Log Activity',  secondary: 'Filter' },
-  pipeline:    { label: 'Pipeline Report',  primary: 'Export PDF',    secondary: 'Date Range' },
-  performance: { label: 'Performance',      primary: 'Export PDF',    secondary: 'Date Range' },
-};
- 
-const modalForms = {
-  deal: `
-    <div class="form-group"><label>Deal Name</label><input type="text" placeholder="e.g. Scottsdale Retail Center"/></div>
-    <div class="form-group"><label>Deal Type</label><select><option>Sale</option><option>Lease</option></select></div>
-    <div class="form-group"><label>Estimated Value</label><input type="text" placeholder="$0.00"/></div>
-    <div class="form-group"><label>Assigned Broker</label><select><option>Jacob Matti</option><option>Sofia Rivera</option><option>Marcus Chen</option><option>Aisha Patel</option></select></div>
-    <div class="form-group"><label>Expected Close Date</label><input type="date"/></div>`,
-  contact: `
-    <div class="form-group"><label>Full Name</label><input type="text" placeholder="Jane Smith"/></div>
-    <div class="form-group"><label>Role</label><select><option>Senior Broker</option><option>Associate Broker</option><option>Junior Broker</option></select></div>
-    <div class="form-group"><label>Email</label><input type="email" placeholder="name@apexre.com"/></div>
-    <div class="form-group"><label>Phone</label><input type="tel" placeholder="(480) 555-0000"/></div>
-    <div class="form-group"><label>Location</label><input type="text" placeholder="Phoenix, AZ"/></div>`,
-  activity: `
-    <div class="form-group"><label>Activity Type</label><select><option>Email</option><option>Call</option><option>Meeting</option><option>Note</option></select></div>
-    <div class="form-group"><label>Related Deal</label><select><option>Westgate Retail Center</option><option>Scottsdale Office Park</option><option>Desert Logistics Hub</option><option>Phoenix Retail Strip</option></select></div>
-    <div class="form-group"><label>Notes</label><input type="text" placeholder="Brief summary..."/></div>`,
-};
- 
-// Init key from storage
-if (localStorage.getItem('apex_crm_groq_key')) {
-  API_KEY = localStorage.getItem('apex_crm_groq_key');
-  document.getElementById('ai-key-section').style.display = 'none';
-}
- 
+
+// Hide key section if key already saved
+if (API_KEY) document.getElementById('ai-key-section').style.display = 'none';
+
 function saveAIKey() {
   const val = document.getElementById('ai-key-input').value.trim();
   if (!val.startsWith('gsk_')) {
@@ -552,11 +450,30 @@ function saveAIKey() {
   localStorage.setItem('apex_crm_groq_key', API_KEY);
   document.getElementById('ai-key-section').style.display = 'none';
 }
- 
-function enterApp() {
-  document.getElementById('disclaimer').classList.add('hidden');
-}
- 
+
+const CRM_CONTEXT = `You are an AI assistant embedded in Apex Real Estate Partners' CRM. You have access to live CRM data:
+DEALS: Westgate Retail Center (Negotiating, $3.2M, S.Rivera, Jun15), Scottsdale Office Park (Pending Close, $5.8M, M.Chen, Jun3), Desert Logistics Hub (Prospect, $1.75M, J.Matti, Jul20), Mesa Industrial Unit 4 (Closed, $920K, S.Rivera), Tempe Mixed-Use Block (Negotiating, $2.4M, A.Patel, Jul5), Chandler Flex Space (Prospect, $680K, M.Chen, Aug1), Phoenix Retail Strip (Pending Close, $1.1M, J.Matti, Jun10), Glendale Warehouse (Dead, $430K, A.Patel), Gilbert Distribution Ctr (Negotiating, $4.1M, M.Chen, Jul30), Downtown Phoenix Tower (Prospect, $9.2M, S.Rivera, Sep1).
+BROKERS: Jacob Matti (Senior, $1.78M), Sofia Rivera (Senior, $4.12M), Marcus Chen (Associate, $6.48M), Aisha Patel (Associate, $2.83M).
+METRICS: Total Pipeline $24.6M (↑12%), Closed MTD $4.2M, Active Deals 18, Close Rate 67%.
+Be concise and professional.`;
+
+const pageConfigs = {
+  dashboard:   { label: 'Dashboard',      primary: '+ New Deal',    secondary: 'Import' },
+  contacts:    { label: 'Contacts',        primary: '+ New Contact', secondary: 'Export' },
+  deals:       { label: 'Deals',           primary: '+ New Deal',    secondary: 'Filter' },
+  activity:    { label: 'Activity',        primary: 'Log Activity',  secondary: 'Filter' },
+  pipeline:    { label: 'Pipeline Report', primary: 'Export PDF',    secondary: 'Date Range' },
+  performance: { label: 'Performance',     primary: 'Export PDF',    secondary: 'Date Range' },
+};
+
+const modalForms = {
+  deal: `<div class="form-group"><label>Deal Name</label><input type="text" placeholder="e.g. Scottsdale Retail Center"/></div><div class="form-group"><label>Deal Type</label><select><option>Sale</option><option>Lease</option></select></div><div class="form-group"><label>Estimated Value</label><input type="text" placeholder="$0.00"/></div><div class="form-group"><label>Assigned Broker</label><select><option>Jacob Matti</option><option>Sofia Rivera</option><option>Marcus Chen</option><option>Aisha Patel</option></select></div><div class="form-group"><label>Expected Close Date</label><input type="date"/></div>`,
+  contact: `<div class="form-group"><label>Full Name</label><input type="text" placeholder="Jane Smith"/></div><div class="form-group"><label>Role</label><select><option>Senior Broker</option><option>Associate Broker</option><option>Junior Broker</option></select></div><div class="form-group"><label>Email</label><input type="email" placeholder="name@apexre.com"/></div><div class="form-group"><label>Phone</label><input type="tel" placeholder="(480) 555-0000"/></div>`,
+  activity: `<div class="form-group"><label>Activity Type</label><select><option>Email</option><option>Call</option><option>Meeting</option><option>Note</option></select></div><div class="form-group"><label>Related Deal</label><select><option>Westgate Retail Center</option><option>Scottsdale Office Park</option><option>Desert Logistics Hub</option><option>Phoenix Retail Strip</option></select></div><div class="form-group"><label>Notes</label><input type="text" placeholder="Brief summary..."/></div>`,
+};
+
+function enterApp() { document.getElementById('disclaimer').classList.add('hidden'); }
+
 function navigate(page, el) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   el.classList.add('active');
@@ -568,85 +485,57 @@ function navigate(page, el) {
   document.getElementById('topbar-primary').textContent = cfg.primary;
   document.getElementById('topbar-secondary').textContent = cfg.secondary;
 }
- 
+
 function topbarPrimary() {
   const p = currentPage;
-  if (p === 'dashboard' || p === 'deals') {
-    document.getElementById('modal-title').textContent = 'New Deal';
-    document.getElementById('modal-body').innerHTML = modalForms.deal;
-  } else if (p === 'contacts') {
-    document.getElementById('modal-title').textContent = 'New Contact';
-    document.getElementById('modal-body').innerHTML = modalForms.contact;
-  } else if (p === 'activity') {
-    document.getElementById('modal-title').textContent = 'Log Activity';
-    document.getElementById('modal-body').innerHTML = modalForms.activity;
-  } else {
-    alert('Export feature coming soon!');
-    return;
-  }
+  if (p === 'dashboard' || p === 'deals') { document.getElementById('modal-title').textContent = 'New Deal'; document.getElementById('modal-body').innerHTML = modalForms.deal; }
+  else if (p === 'contacts') { document.getElementById('modal-title').textContent = 'New Contact'; document.getElementById('modal-body').innerHTML = modalForms.contact; }
+  else if (p === 'activity') { document.getElementById('modal-title').textContent = 'Log Activity'; document.getElementById('modal-body').innerHTML = modalForms.activity; }
+  else { alert('Export feature coming soon!'); return; }
   document.getElementById('modal-overlay').classList.add('open');
 }
- 
+
 function topbarSecondary() {
-  if (currentPage === 'pipeline' || currentPage === 'performance') {
-    alert('Date range filter: showing Q2 2026 (Apr 1 – Jun 30)');
-  } else {
-    alert(pageConfigs[currentPage].secondary + ' feature coming soon!');
-  }
+  if (currentPage === 'pipeline' || currentPage === 'performance') alert('Date range: Q2 2026 (Apr 1 – Jun 30)');
+  else alert(pageConfigs[currentPage].secondary + ' coming soon!');
 }
- 
-function closeModal(e) {
-  if (!e || e.target === document.getElementById('modal-overlay')) {
-    document.getElementById('modal-overlay').classList.remove('open');
-  }
-}
- 
-function submitModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
-  setTimeout(() => alert('✓ Saved successfully! (Demo — no data was actually stored)'), 100);
-}
- 
-// AI
+
+function closeModal(e) { if (!e || e.target === document.getElementById('modal-overlay')) document.getElementById('modal-overlay').classList.remove('open'); }
+function submitModal() { document.getElementById('modal-overlay').classList.remove('open'); setTimeout(() => alert('✓ Saved! (Demo — no data stored)'), 100); }
+
 function toggleAI() {
   aiOpen = !aiOpen;
   document.getElementById('ai-panel').classList.toggle('open', aiOpen);
-  if (aiOpen && document.getElementById('ai-messages').children.length === 0) {
+  if (aiOpen && document.getElementById('ai-messages').children.length === 0 && API_KEY) {
     setTimeout(() => addAIMsg('bot', "Hi! I have access to your full pipeline and broker data. What would you like to know?"), 300);
   }
 }
- 
+
 function addAIMsg(role, text) {
   if (role === 'user') document.getElementById('ai-suggestions').style.display = 'none';
-  const msg = document.createElement('div');
-  msg.className = `ai-msg ${role} animate-in`;
-  const avatar = document.createElement('div');
-  avatar.className = 'ai-avatar';
-  avatar.textContent = role === 'bot' ? 'AI' : 'JM';
-  const bubble = document.createElement('div');
-  bubble.className = 'ai-bubble';
-  bubble.textContent = text;
-  msg.appendChild(avatar); msg.appendChild(bubble);
-  document.getElementById('ai-messages').appendChild(msg);
-  document.getElementById('ai-messages').scrollTop = 99999;
-}
- 
-function addTyping() {
-  const msg = document.createElement('div');
-  msg.className = 'ai-msg bot'; msg.id = 'ai-typing';
-  const av = document.createElement('div'); av.className = 'ai-avatar'; av.textContent = 'AI';
-  const b = document.createElement('div'); b.className = 'ai-bubble ai-typing';
-  b.innerHTML = '<span></span><span></span><span></span>';
+  const msg = document.createElement('div'); msg.className = `ai-msg ${role}`;
+  const av = document.createElement('div'); av.className = 'ai-avatar'; av.textContent = role === 'bot' ? 'AI' : 'JM';
+  const b = document.createElement('div'); b.className = 'ai-bubble'; b.textContent = text;
   msg.appendChild(av); msg.appendChild(b);
   document.getElementById('ai-messages').appendChild(msg);
   document.getElementById('ai-messages').scrollTop = 99999;
 }
- 
+
+function addTyping() {
+  const msg = document.createElement('div'); msg.className = 'ai-msg bot'; msg.id = 'ai-typing';
+  const av = document.createElement('div'); av.className = 'ai-avatar'; av.textContent = 'AI';
+  const b = document.createElement('div'); b.className = 'ai-bubble ai-typing'; b.innerHTML = '<span></span><span></span><span></span>';
+  msg.appendChild(av); msg.appendChild(b);
+  document.getElementById('ai-messages').appendChild(msg);
+  document.getElementById('ai-messages').scrollTop = 99999;
+}
+
 function removeTyping() { const el = document.getElementById('ai-typing'); if (el) el.remove(); }
- 
+
 async function sendAI() {
   const input = document.getElementById('ai-input');
   const text = input.value.trim();
-  if (!text || aiLoading) return;
+  if (!text || aiLoading || !API_KEY) return;
   input.value = ''; input.style.height = 'auto';
   aiLoading = true;
   addAIMsg('user', text); addTyping();
@@ -654,8 +543,7 @@ async function sendAI() {
     const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
-      body: JSON.stringify({ model: 'llama-3.3-70b-versatile', max_tokens: 500,
-        messages: [{ role: 'system', content: CRM_CONTEXT }, { role: 'user', content: text }] })
+      body: JSON.stringify({ model: 'llama-3.3-70b-versatile', max_tokens: 500, messages: [{ role: 'system', content: CRM_CONTEXT }, { role: 'user', content: text }] })
     });
     const data = await res.json();
     removeTyping();
@@ -663,9 +551,8 @@ async function sendAI() {
   } catch { removeTyping(); addAIMsg('bot', 'Connection error. Please try again.'); }
   aiLoading = false;
 }
- 
+
 function askAI(el) { document.getElementById('ai-input').value = el.textContent; sendAI(); }
- 
 document.getElementById('ai-input').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendAI(); } });
 document.getElementById('ai-input').addEventListener('input', function() { this.style.height = 'auto'; this.style.height = Math.min(this.scrollHeight, 80) + 'px'; });
 </script>
