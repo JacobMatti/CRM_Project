@@ -1,3 +1,6 @@
+
+raw
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +27,7 @@
       --sidebar-w: 220px;
     }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; overflow: hidden; font-size: 13px; }
-
+ 
     /* ── DISCLAIMER ── */
     #disclaimer {
       position: fixed; inset: 0; background: #0f1f3d;
@@ -47,7 +50,7 @@
     .disc-btn { background: #0070d2; color: #fff; border: none; border-radius: 8px; padding: 13px 36px; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; width: 100%; transition: background 0.15s; }
     .disc-btn:hover { background: #005fb2; }
     .disc-note { margin-top: 14px; font-size: 11.5px; color: #aaa; }
-
+ 
     /* ── SIDEBAR ── */
     #sidebar { width: var(--sidebar-w); background: #16325c; display: flex; flex-direction: column; flex-shrink: 0; overflow-y: auto; }
     .sidebar-logo { padding: 18px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; }
@@ -64,8 +67,9 @@
     .user-avatar { width: 30px; height: 30px; border-radius: 50%; background: #0070d2; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #fff; flex-shrink: 0; }
     .user-info span { display: block; font-size: 12px; font-weight: 500; color: #fff; }
     .user-info small { font-size: 10px; color: rgba(255,255,255,0.5); }
-
+ 
     /* ── MAIN ── */
+    #app-row { display: flex; flex: 1; overflow: hidden; }
     #main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
     #topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; height: 52px; display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
     #topbar h1 { font-size: 16px; font-weight: 600; color: var(--text); }
@@ -77,11 +81,11 @@
     .btn-primary:hover { background: #005fb2; }
     .btn-ghost { background: none; border: 1px solid var(--border); color: var(--text-dim); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
+ 
     #content { flex: 1; overflow-y: auto; padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
     .page { display: none; flex-direction: column; gap: 20px; }
     .page.active { display: flex; }
-
+ 
     /* ── METRICS ── */
     .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; position: relative; overflow: hidden; }
@@ -95,13 +99,13 @@
     .metric-change { font-size: 11px; }
     .up { color: var(--success); }
     .down { color: var(--danger); }
-
+ 
     /* ── CARD ── */
     .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
     .card-header { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
     .card-header h2 { font-size: 13.5px; font-weight: 600; color: var(--text); }
     .card-header .count { background: var(--accent-light); color: var(--accent); font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
-
+ 
     /* ── TABLE ── */
     table { width: 100%; border-collapse: collapse; }
     thead th { padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim); border-bottom: 1px solid var(--border); background: #fafbfc; }
@@ -111,7 +115,7 @@
     tbody td { padding: 11px 14px; font-size: 12.5px; color: var(--text); }
     .deal-name { font-weight: 500; color: var(--accent); }
     .value-cell { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
-
+ 
     .badge { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 12px; font-size: 11px; font-weight: 500; }
     .badge-blue   { background: #e8f4fd; color: #0070d2; }
     .badge-orange { background: #fef3e2; color: #b06000; }
@@ -119,10 +123,10 @@
     .badge-green  { background: #e3f5ed; color: #04844b; }
     .badge-gray   { background: #f4f4f4; color: #706e6b; }
     .badge-red    { background: #fce9e9; color: #c23934; }
-
+ 
     /* ── TWO COL ── */
     .two-col { display: grid; grid-template-columns: 1fr 360px; gap: 16px; }
-
+ 
     /* ── PIPELINE BAR ── */
     .pipeline-bar { padding: 14px 18px; border-bottom: 1px solid var(--border); }
     .pipeline-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); margin-bottom: 6px; }
@@ -132,7 +136,7 @@
     .seg-negotiate { background: #ff9e2c; }
     .seg-pending { background: #7b5ea7; }
     .seg-closed { background: #04844b; }
-
+ 
     /* ── CONTACTS ── */
     .contact-item { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; }
     .contact-item:last-child { border-bottom: none; }
@@ -142,7 +146,7 @@
     .contact-info .role { font-size: 11px; color: var(--text-dim); margin-top: 1px; }
     .contact-meta { margin-left: auto; text-align: right; font-size: 11px; color: var(--text-dim); }
     .contact-meta strong { display: block; font-size: 13px; color: var(--text); font-family: 'JetBrains Mono', monospace; }
-
+ 
     /* ── ACTIVITY ── */
     .activity-item { display: flex; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--border); }
     .activity-item:last-child { border-bottom: none; }
@@ -152,7 +156,7 @@
     .activity-body .act-title { font-size: 12.5px; font-weight: 500; color: var(--text); }
     .activity-body .act-sub { font-size: 11.5px; color: var(--text-dim); margin-top: 2px; }
     .activity-time { font-size: 11px; color: var(--text-dim); flex-shrink: 0; margin-top: 2px; }
-
+ 
     /* ── MODAL ── */
     #modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 100; display: none; align-items: center; justify-content: center; }
     #modal-overlay.open { display: flex; }
@@ -163,7 +167,7 @@
     .form-group input, .form-group select { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; font-family: 'Inter', sans-serif; color: var(--text); outline: none; }
     .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
     .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
-
+ 
     /* ── AI PANEL ── */
     #ai-panel { position: fixed; right: 0; top: 0; bottom: 0; width: 360px; background: var(--surface); border-left: 1px solid var(--border); display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s ease; z-index: 50; box-shadow: -4px 0 20px rgba(0,0,0,0.08); }
     #ai-panel.open { transform: translateX(0); }
@@ -198,20 +202,59 @@
     #ai-toggle { position: fixed; bottom: 24px; right: 24px; background: var(--accent); color: #fff; border: none; border-radius: 50px; padding: 10px 18px; font-size: 13px; font-weight: 500; font-family: 'Inter', sans-serif; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,112,210,0.4); transition: all 0.2s; z-index: 40; }
     #ai-toggle:hover { background: #005fb2; transform: translateY(-1px); }
     #ai-toggle svg { width: 16px; height: 16px; fill: #fff; }
-
+ 
     @keyframes fadeIn { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
     .animate-in { animation: fadeIn 0.2s ease; }
-
+ 
     /* ── REPORT CHARTS ── */
     .chart-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 12px; }
     .chart-bar-label { width: 120px; color: var(--text-dim); flex-shrink: 0; }
     .chart-bar-track { flex: 1; background: var(--border); border-radius: 3px; height: 8px; overflow: hidden; }
     .chart-bar-fill { height: 100%; border-radius: 3px; }
     .chart-bar-val { width: 60px; text-align: right; font-family: 'JetBrains Mono', monospace; color: var(--text); flex-shrink: 0; }
+ 
+    /* API BANNER */
+    #api-banner {
+      background: rgba(0,112,210,0.06);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 24px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 12.5px; color: var(--accent);
+      flex-shrink: 0;
+    }
+    #api-banner input {
+      flex: 1; max-width: 300px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 5px; padding: 5px 10px;
+      font-size: 12px; font-family: 'JetBrains Mono', monospace;
+      color: var(--text); outline: none;
+    }
+    #api-banner input:focus { border-color: var(--accent); }
+    #api-banner .save-btn {
+      background: var(--accent); color: #fff;
+      border: none; border-radius: 5px;
+      padding: 5px 12px; font-size: 12px;
+      font-family: 'Inter', sans-serif; font-weight: 500; cursor: pointer;
+    }
+    #how-to-btn {
+      margin-left: auto; background: none;
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 4px 10px; font-size: 12px;
+      color: var(--text-dim); cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    #how-to-btn:hover { border-color: var(--accent); color: var(--accent); }
+    #how-to {
+      display: none; background: #f8faff;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px; font-size: 12.5px;
+      color: var(--text-dim); line-height: 1.9;
+    }
   </style>
 </head>
 <body>
-
+ 
 <!-- DISCLAIMER -->
 <div id="disclaimer">
   <div class="disc-card">
@@ -219,13 +262,14 @@
     <div class="disc-badge">⚠ Demo Project</div>
     <h1>Apex CRM Dashboard</h1>
     <p>This is a <strong>student portfolio project</strong> built to demonstrate CRM design, data visualization, and AI integration skills. All data shown is <strong>completely fictional</strong> — no real clients, deals, or brokers are represented.</p>
-
+ 
     <button class="disc-btn" onclick="enterApp()">Enter Demo →</button>
     <div class="disc-note">Built by Jacob Matti · Arizona State University</div>
   </div>
 </div>
-
+ 
 <!-- SIDEBAR -->
+<div id="app-row">
 <div id="sidebar">
   <div class="sidebar-logo">
     <div class="logo-mark">AX</div>
@@ -260,7 +304,7 @@
     <div class="user-info"><span>Jacob Matti</span><small>Senior Broker</small></div>
   </div>
 </div>
-
+ 
 <!-- MAIN -->
 <div id="main">
   <div id="topbar">
@@ -270,9 +314,9 @@
       <button class="btn btn-primary" id="topbar-primary" onclick="topbarPrimary()">+ New Deal</button>
     </div>
   </div>
-
+ 
   <div id="content">
-
+ 
     <!-- DASHBOARD PAGE -->
     <div class="page active" id="page-dashboard">
       <div class="metrics-grid animate-in">
@@ -307,7 +351,7 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- CONTACTS PAGE -->
     <div class="page" id="page-contacts">
       <div class="card animate-in">
@@ -322,7 +366,7 @@
         </tbody></table>
       </div>
     </div>
-
+ 
     <!-- DEALS PAGE -->
     <div class="page" id="page-deals">
       <div class="card animate-in">
@@ -343,7 +387,7 @@
         </tbody></table>
       </div>
     </div>
-
+ 
     <!-- ACTIVITY PAGE -->
     <div class="page" id="page-activity">
       <div class="card animate-in">
@@ -358,7 +402,7 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- PIPELINE REPORT PAGE -->
     <div class="page" id="page-pipeline">
       <div class="metrics-grid animate-in">
@@ -383,7 +427,7 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- PERFORMANCE PAGE -->
     <div class="page" id="page-performance">
       <div class="metrics-grid animate-in">
@@ -403,19 +447,31 @@
         </tbody></table>
       </div>
     </div>
-
+ 
   </div>
 </div>
-
+</div>
+ 
 <!-- AI TOGGLE -->
 <button id="ai-toggle" onclick="toggleAI()">
   <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
   Ask AI
 </button>
-
+ 
 <!-- AI PANEL -->
 <div id="ai-panel">
   <div class="ai-header"><div class="ai-dot"></div><h3>Apex AI Assistant</h3><button class="ai-close" onclick="toggleAI()">×</button></div>
+  <!-- API KEY INPUT (shown until key is saved) -->
+  <div id="ai-key-section" style="padding:16px;border-bottom:1px solid var(--border);">
+    <p style="font-size:12px;color:var(--text-dim);margin-bottom:10px;line-height:1.6;">To use the AI assistant, enter your free Groq API key below.</p>
+    <input type="password" id="ai-key-input" placeholder="gsk_..." style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--text);outline:none;margin-bottom:8px;"/>
+    <button onclick="saveAIKey()" style="width:100%;background:var(--accent);color:#fff;border:none;border-radius:6px;padding:8px;font-size:13px;font-family:'Inter',sans-serif;font-weight:500;cursor:pointer;margin-bottom:10px;">Save Key</button>
+    <p style="font-size:11.5px;color:var(--text-dim);line-height:1.7;">
+      Don't have a key? Get one free at <a href="https://console.groq.com" target="_blank" style="color:var(--accent);">console.groq.com</a> — no credit card needed.<br/>
+      Create an account → API Keys → Create API Key. Copy the key (starts with <code style="background:var(--bg);font-size:11px;">gsk_</code>) and paste it above.
+    </p>
+  </div>
+ 
   <div id="ai-messages"></div>
   <div class="ai-suggestions" id="ai-suggestions">
     <div class="ai-suggestion" onclick="askAI(this)">Summarize my current pipeline</div>
@@ -428,7 +484,7 @@
     <button id="ai-send" onclick="sendAI()"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
   </div>
 </div>
-
+ 
 <!-- NEW DEAL MODAL -->
 <div id="modal-overlay" onclick="closeModal(event)">
   <div id="modal">
@@ -440,22 +496,22 @@
     </div>
   </div>
 </div>
-
+ 
 <script>
-const API_KEY = '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';
+let API_KEY = localStorage.getItem('apex_crm_groq_key') || '';
 const CRM_CONTEXT = `You are an AI assistant embedded in Apex Real Estate Partners' CRM. You have access to live CRM data:
-
+ 
 DEALS: Westgate Retail Center (Negotiating, $3.2M, S.Rivera, Jun15), Scottsdale Office Park (Pending Close, $5.8M, M.Chen, Jun3), Desert Logistics Hub (Prospect, $1.75M, J.Matti, Jul20), Mesa Industrial Unit 4 (Closed, $920K, S.Rivera), Tempe Mixed-Use Block (Negotiating, $2.4M, A.Patel, Jul5), Chandler Flex Space (Prospect, $680K, M.Chen, Aug1), Phoenix Retail Strip (Pending Close, $1.1M, J.Matti, Jun10), Glendale Warehouse (Dead, $430K, A.Patel), Gilbert Distribution Ctr (Negotiating, $4.1M, M.Chen, Jul30), Downtown Phoenix Tower (Prospect, $9.2M, S.Rivera, Sep1).
-
+ 
 BROKERS: Jacob Matti (Senior, $1.78M pipeline), Sofia Rivera (Senior, $4.12M), Marcus Chen (Associate, $6.48M), Aisha Patel (Associate, $2.83M).
-
+ 
 METRICS: Total Pipeline $24.6M (↑12%), Closed MTD $4.2M, Active Deals 18, Close Rate 67% (↓2%).
-
+ 
 Be concise and professional.`;
-
+ 
 let aiOpen = false, aiLoading = false;
 let currentPage = 'dashboard';
-
+ 
 const pageConfigs = {
   dashboard:   { label: 'Dashboard',       primary: '+ New Deal',    secondary: 'Import' },
   contacts:    { label: 'Contacts',         primary: '+ New Contact', secondary: 'Export' },
@@ -464,7 +520,7 @@ const pageConfigs = {
   pipeline:    { label: 'Pipeline Report',  primary: 'Export PDF',    secondary: 'Date Range' },
   performance: { label: 'Performance',      primary: 'Export PDF',    secondary: 'Date Range' },
 };
-
+ 
 const modalForms = {
   deal: `
     <div class="form-group"><label>Deal Name</label><input type="text" placeholder="e.g. Scottsdale Retail Center"/></div>
@@ -483,11 +539,28 @@ const modalForms = {
     <div class="form-group"><label>Related Deal</label><select><option>Westgate Retail Center</option><option>Scottsdale Office Park</option><option>Desert Logistics Hub</option><option>Phoenix Retail Strip</option></select></div>
     <div class="form-group"><label>Notes</label><input type="text" placeholder="Brief summary..."/></div>`,
 };
-
+ 
+// Init key from storage
+if (localStorage.getItem('apex_crm_groq_key')) {
+  API_KEY = localStorage.getItem('apex_crm_groq_key');
+  document.getElementById('ai-key-section').style.display = 'none';
+}
+ 
+function saveAIKey() {
+  const val = document.getElementById('ai-key-input').value.trim();
+  if (!val.startsWith('gsk_')) {
+    document.getElementById('ai-key-input').style.borderColor = '#c23934';
+    return;
+  }
+  API_KEY = val;
+  localStorage.setItem('apex_crm_groq_key', API_KEY);
+  document.getElementById('ai-key-section').style.display = 'none';
+}
+ 
 function enterApp() {
   document.getElementById('disclaimer').classList.add('hidden');
 }
-
+ 
 function navigate(page, el) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   el.classList.add('active');
@@ -499,7 +572,7 @@ function navigate(page, el) {
   document.getElementById('topbar-primary').textContent = cfg.primary;
   document.getElementById('topbar-secondary').textContent = cfg.secondary;
 }
-
+ 
 function topbarPrimary() {
   const p = currentPage;
   if (p === 'dashboard' || p === 'deals') {
@@ -517,7 +590,7 @@ function topbarPrimary() {
   }
   document.getElementById('modal-overlay').classList.add('open');
 }
-
+ 
 function topbarSecondary() {
   if (currentPage === 'pipeline' || currentPage === 'performance') {
     alert('Date range filter: showing Q2 2026 (Apr 1 – Jun 30)');
@@ -525,18 +598,18 @@ function topbarSecondary() {
     alert(pageConfigs[currentPage].secondary + ' feature coming soon!');
   }
 }
-
+ 
 function closeModal(e) {
   if (!e || e.target === document.getElementById('modal-overlay')) {
     document.getElementById('modal-overlay').classList.remove('open');
   }
 }
-
+ 
 function submitModal() {
   document.getElementById('modal-overlay').classList.remove('open');
   setTimeout(() => alert('✓ Saved successfully! (Demo — no data was actually stored)'), 100);
 }
-
+ 
 // AI
 function toggleAI() {
   aiOpen = !aiOpen;
@@ -545,7 +618,7 @@ function toggleAI() {
     setTimeout(() => addAIMsg('bot', "Hi! I have access to your full pipeline and broker data. What would you like to know?"), 300);
   }
 }
-
+ 
 function addAIMsg(role, text) {
   if (role === 'user') document.getElementById('ai-suggestions').style.display = 'none';
   const msg = document.createElement('div');
@@ -560,7 +633,7 @@ function addAIMsg(role, text) {
   document.getElementById('ai-messages').appendChild(msg);
   document.getElementById('ai-messages').scrollTop = 99999;
 }
-
+ 
 function addTyping() {
   const msg = document.createElement('div');
   msg.className = 'ai-msg bot'; msg.id = 'ai-typing';
@@ -571,9 +644,9 @@ function addTyping() {
   document.getElementById('ai-messages').appendChild(msg);
   document.getElementById('ai-messages').scrollTop = 99999;
 }
-
+ 
 function removeTyping() { const el = document.getElementById('ai-typing'); if (el) el.remove(); }
-
+ 
 async function sendAI() {
   const input = document.getElementById('ai-input');
   const text = input.value.trim();
@@ -594,9 +667,9 @@ async function sendAI() {
   } catch { removeTyping(); addAIMsg('bot', 'Connection error. Please try again.'); }
   aiLoading = false;
 }
-
+ 
 function askAI(el) { document.getElementById('ai-input').value = el.textContent; sendAI(); }
-
+ 
 document.getElementById('ai-input').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendAI(); } });
 document.getElementById('ai-input').addEventListener('input', function() { this.style.height = 'auto'; this.style.height = Math.min(this.scrollHeight, 80) + 'px'; });
 </script>
